@@ -21,6 +21,11 @@ body {
   line-height: 1.6;
 }
 
+/* Smooth scrolling for Safari */
+html {
+  scroll-behavior: smooth;
+}
+
 /* === Header & Navigation === */
 header {
   position: sticky;
@@ -31,10 +36,13 @@ header {
 }
 
 .portfolio-banner {
+  width: 100vw; /* Make it full viewport width */
+  margin-left: calc(50% - 50vw); /* Center it if inside a centered container */
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 0; /* Remove side padding for true edge-to-edge */
+  background: #fff; /* Ensure background is set */
 }
 
 nav ul {
@@ -135,7 +143,7 @@ nav a:focus {
   max-width: 900px;
   margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
+  flex: row;
   gap: 2rem;
   align-items: flex-start;
 }

@@ -3,31 +3,6 @@ const certList = document.getElementById("certList");
 const cvToggle = document.getElementById("cvToggle");
 const cvSection = document.getElementById("cvSection");
 
-certToggle.addEventListener("click", function () {
-  const isVisible = certList.classList.toggle("visible");
-  certToggle.textContent = isVisible
-    ? "Hide Certifications"
-    : "Show Certifications";
-  certToggle.setAttribute("aria-expanded", isVisible);
-  // Hide CV if showing certificates
-  cvSection.style.display = "none";
-  cvToggle.textContent = "Show CV";
-  cvToggle.setAttribute("aria-expanded", false);
-});
-
-cvToggle.addEventListener("click", function () {
-  const isVisible = cvSection.style.display === "block";
-  cvSection.style.display = isVisible ? "none" : "block";
-  cvToggle.textContent = isVisible ? "Show CV" : "Hide CV";
-  cvToggle.setAttribute("aria-expanded", !isVisible);
-  // Hide certificates if showing CV
-  if (!isVisible) {
-    certList.classList.remove("visible");
-    certToggle.textContent = "Show Certifications";
-    certToggle.setAttribute("aria-expanded", false);
-  }
-});
-
 document.addEventListener("DOMContentLoaded", () => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -38,3 +13,43 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
 });
+
+document.getElementById("certToggle").addEventListener("click", function () {
+  const certList = document.getElementById("certList");
+  const expanded = this.getAttribute("aria-expanded") === "true";
+  certList.style.display = expanded ? "none" : "block";
+  this.setAttribute("aria-expanded", !expanded);
+  this.textContent = expanded ? "Show Certifications" : "Hide Certifications";
+});
+
+document.getElementById("cvToggle").addEventListener("click", function () {
+  const cvSection = document.getElementById("cvSection");
+  const expanded = this.getAttribute("aria-expanded") === "true";
+  cvSection.style.display = expanded ? "none" : "block";
+  this.setAttribute("aria-expanded", !expanded);
+  this.textContent = expanded ? "Show CV" : "Hide CV";
+});
+
+document
+  .getElementById("projectsToggle")
+  .addEventListener("click", function () {
+    const projectsSection = document.getElementById("projectsSection");
+    const expanded = this.getAttribute("aria-expanded") === "true";
+    projectsSection.style.display = expanded ? "none" : "block";
+    this.setAttribute("aria-expanded", !expanded);
+    this.textContent = expanded ? "Show Projects" : "Hide Projects";
+  });
+
+document
+  .querySelector('a[href="#projectsSection"]')
+  ?.addEventListener("click", function (event) {
+    event.preventDefault();
+    const projectsSection = document.getElementById("projectsSection");
+    const projectsToggle = document.getElementById("projectsToggle");
+    if (projectsSection && projectsToggle) {
+      projectsSection.style.display = "block";
+      projectsToggle.setAttribute("aria-expanded", "true");
+      projectsToggle.textContent = "Hide Projects";
+      projectsSection.scrollIntoView({ behavior: "smooth" });
+    }
+  });
