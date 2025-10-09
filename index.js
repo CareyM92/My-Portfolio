@@ -14,23 +14,22 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
 });
 
-document.getElementById("certToggle").addEventListener("click", function () {
-  const certList = document.getElementById("certList");
+// Certifications toggle
+certToggle.addEventListener("click", function () {
   const expanded = this.getAttribute("aria-expanded") === "true";
   certList.style.display = expanded ? "none" : "block";
   this.setAttribute("aria-expanded", !expanded);
   this.textContent = expanded ? "Show Certifications" : "Hide Certifications";
 });
 
-document.getElementById("cvToggle").addEventListener("click", function () {
-  const cvSection = document.getElementById("cvSection");
+// CV toggle with dynamic iframe and fallback link
+cvToggle.addEventListener("click", function () {
   const cvFrameContainer = document.getElementById("cvFrameContainer");
   const expanded = this.getAttribute("aria-expanded") === "true";
   cvSection.style.display = expanded ? "none" : "block";
   this.setAttribute("aria-expanded", !expanded);
   this.textContent = expanded ? "Show CV" : "Hide CV";
 
-  // Only add iframe if opening and not already present
   if (!expanded && !cvFrameContainer.querySelector("iframe")) {
     cvFrameContainer.innerHTML = `
       <iframe
@@ -38,15 +37,19 @@ document.getElementById("cvToggle").addEventListener("click", function () {
         width="100%"
         height="400px"
         frameborder="0"
+        onerror="this.style.display='none';document.getElementById('cvDownloadLink').style.display='block';"
       ></iframe>
+      <a id="cvDownloadLink" href="Portfolio CV.pdf" target="_blank" rel="noopener" style="display:none;">
+        Download/View CV PDF
+      </a>
     `;
   }
-  // Optionally remove iframe when hiding
   if (expanded) {
     cvFrameContainer.innerHTML = "";
   }
 });
 
+// Projects toggle
 document
   .getElementById("projectsToggle")
   .addEventListener("click", function () {
@@ -57,6 +60,7 @@ document
     this.textContent = expanded ? "Show Projects" : "Hide Projects";
   });
 
+// Projects nav link scroll and open
 document
   .querySelector('a[href="#projectsSection"]')
   ?.addEventListener("click", function (event) {
