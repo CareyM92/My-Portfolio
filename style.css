@@ -146,6 +146,7 @@ nav a:focus {
   flex: row;
   gap: 2rem;
   align-items: flex-start;
+  border-radius: 2px;
 }
 
 .about-img {
