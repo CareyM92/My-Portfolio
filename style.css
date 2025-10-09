@@ -36,13 +36,13 @@ header {
 }
 
 .portfolio-banner {
-  width: 100vw; /* Make it full viewport width */
-  margin-left: calc(50% - 50vw); /* Center it if inside a centered container */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 0.5rem 0; /* Remove side padding for true edge-to-edge */
-  background: #fff; /* Ensure background is set */
+  padding: 0.5rem 0;
+  background: #fff;
 }
 
 nav ul {
@@ -199,20 +199,17 @@ nav a:focus {
 }
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(180px, 1fr)
-  ); /* smaller cards */
-  gap: 1.2rem; /* less gap for compact look */
-  max-width: 900px; /* reasonable grid width */
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.2rem;
+  max-width: 900px;
   margin: 0 auto;
 }
 .project-card {
   background: #fff;
   border: 1px solid #ececec;
   border-radius: 1rem;
-  padding: 1rem; /* less padding for smaller cards */
-  font-size: 0.95rem; /* slightly smaller text */
+  padding: 1rem;
+  font-size: 0.95rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
   transition: 0.3s;
 }
