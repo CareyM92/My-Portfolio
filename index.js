@@ -46,17 +46,6 @@ cvToggle.addEventListener("click", function () {
   this.setAttribute("aria-expanded", !expanded);
   this.textContent = expanded ? "Show CV" : "Hide CV";
 
-  if (!expanded && !cvFrameContainer.querySelector("iframe")) {
-    cvFrameContainer.innerHTML = `
-      <iframe
-        src="Portfolio CV.pdf"
-        width="100%"
-        height="400px"
-        frameborder="0"
-        style="border-radius:8px;border:1px solid #ddd;background:#fff;"
-      ></iframe>
-    `;
-  }
   if (expanded) {
     cvFrameContainer.innerHTML = "";
   }
