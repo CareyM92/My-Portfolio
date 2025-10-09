@@ -53,11 +53,8 @@ cvToggle.addEventListener("click", function () {
         width="100%"
         height="400px"
         frameborder="0"
-        onerror="this.style.display='none';document.getElementById('cvDownloadLink').style.display='block';"
+        style="border-radius:8px;border:1px solid #ddd;background:#fff;"
       ></iframe>
-      <a id="cvDownloadLink" href="Portfolio CV.pdf" target="_blank" rel="noopener" style="display:none;">
-        Download/View CV PDF
-      </a>
     `;
   }
   if (expanded) {
