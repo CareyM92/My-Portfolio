@@ -3,19 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>Carey-Ann Meinie | Portfolio</title>
+    <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap"
       rel="stylesheet"
     />
-
-    <title>Carey-Ann Meinie | Portfolio</title>
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
+    <!-- ===== HEADER ===== -->
     <header>
       <div class="portfolio-banner">
         <nav>
@@ -26,231 +24,268 @@
           </ul>
         </nav>
       </div>
+      <div class="theme-switch">
+        <button id="themeToggle" aria-label="Toggle light/dark theme">
+          ☀️
+        </button>
+      </div>
     </header>
 
-    <main>
-      <section id="hero">
-        <h1>Hi, I'm Carey-Ann Meinie 🌟</h1>
-        <p>
-          From transcription to transformation - building responsive apps,
-          automations, and data‑driven insights.
-        </p>
-      </section>
+    <!-- ===== HERO ===== -->
+    <section id="hero">
+      <h1>Hi, I'm Carey-Ann Meinie 🌟</h1>
+      <p>
+        From transcription to transformation — building responsive apps,
+        automations, and data-driven insights.
+      </p>
+    </section>
 
-      <section id="about" class="fade-in">
-        <div class="about-container">
-          <img
-            src="Carey-Ann .png"
-            alt="Carey-Ann portrait"
-            class="about-img"
-          />
-          <div class="about-text">
-            <h2>About Me</h2>
-            <p>
-              I’m Carey-Ann Meinie — a remote administrative specialist turned
-              web developer, creative engineer, and emerging data scientist.
-              With over 9 years of experience in transcription, academic content
-              creation, and backend integration, I’ve built a strong foundation
-              in precision, structure, and problem-solving. Now, I’m focused on
-              building responsive web apps, automating workflows, and
-              transforming data into meaningful insights using HTML, CSS,
-              JavaScript, Python, and SQL. I’m currently expanding into cloud
-              architecture and AI-powered tools, with a long-term goal of
-              creating accessible, engaging educational solutions that blend
-              technical logic with creative presentation.
-            </p>
+    <!-- ===== ABOUT ===== -->
+    <section id="about">
+      <div class="about-container">
+        <img src="Carey-Ann .png" alt="Carey-Ann portrait" class="about-img" />
+        <div class="about-text">
+          <h2>About Me</h2>
+          <p>
+            I’m Carey-Ann Meinie — a remote administrative specialist turned web
+            developer, creative engineer, and emerging data scientist. With over
+            9 years of experience in transcription, academic content creation,
+            and backend integration, I’ve built a strong foundation in
+            precision, structure, and problem-solving.
+          </p>
+          <p>
+            Now, I’m focused on building responsive web apps, automating
+            workflows, and transforming data into meaningful insights using
+            HTML, CSS, JavaScript, Python, and SQL. I’m currently expanding into
+            cloud architecture and AI-powered tools, with a long-term goal of
+            creating accessible, engaging educational solutions that blend
+            technical logic with creative presentation.
+          </p>
+        </div>
+      </div>
 
-            <div class="about-actions">
-              <button
-                class="cert-btn"
-                id="certToggle"
-                aria-expanded="false"
-                aria-controls="certList"
-              >
-                Show Certifications
-              </button>
-              <button id="cvToggle" class="button" aria-expanded="false">
-                Show CV
-              </button>
-              <button id="projectsToggle" class="button" aria-expanded="false">
-                Show Projects
-              </button>
+      <div class="about-actions">
+        <button class="cert-btn" id="certToggle" aria-expanded="false">
+          Show Certifications
+        </button>
+        <button id="cvToggle" class="button" aria-expanded="false">
+          Show CV
+        </button>
+        <button id="projectsToggle" class="button" aria-expanded="false">
+          Show Projects
+        </button>
+      </div>
+
+      <div class="cert-list" id="certList">
+        <div class="cert-grid">
+          <!-- Web Development -->
+          <div class="cert-category">
+            <h3>💻 Web Development</h3>
+            <div class="cert-card web">Web Development – SheCodes</div>
+            <div class="cert-card web">
+              Introduction to Web Development – SheCodes
             </div>
-
-            <ul class="cert-list" id="certList" style="display: none">
-              <li>
-                Oracle Multicloud Architecture – Oracle University (In Progress)
-              </li>
-              <li>Web Development – SheCodes</li>
-              <li>Introduction to Data Science - Cisco Networking Academy</li>
-              <li>Introduction to Web Development – SheCodes</li>
-              <li>Introduction to Coding – SheCodes</li>
-              <li>
-                Introduction to Critical Infrastructure Protection – OPSWAT
-                Academy
-              </li>
-              <li>Introducing Generative AI with AWS – Udacity</li>
-              <li>AI Skills – DUT & Microsoft</li>
-              <li>Full Stack Development – FNB App Academy</li>
-              <li>Python-Django Development – SimpliLearn</li>
-              <li>Data Science & Analytics – HP LIFE</li>
-              <li>Business Analytics with Excel – SimpliLearn</li>
-              <li>Microsoft Excel Essentials – SimpliLearn</li>
-              <li>Secretarial and Receptionist Course – Cursa</li>
-              <li>English C1 Advanced – EF SET</li>
-            </ul>
-
-            <div class="cv-section" id="cvSection" style="display: none">
-              <h3></h3>
-              <div id="cvFrameContainer"></div>
+            <div class="cert-card web">Introduction to Coding – SheCodes</div>
+            <div class="cert-card web">
+              Full Stack Development – FNB App Academy
             </div>
-
-            <div
-              class="projects-section"
-              id="projectsSection"
-              style="display: none"
-            >
-              <h3>✨ Featured Projects</h3>
-              <div class="projects-grid">
-                <div class="project-card">
-                  <h4>🌩️ Vanilla Weather App 🌞</h4>
-                  <p>
-                    A responsive web application that delivers real-time weather
-                    updates for any city worldwide. Built without frameworks to
-                    demonstrate strong fundamentals in DOM manipulation, API
-                    integration, and responsive design.
-                  </p>
-                  <a
-                    href="https://extraordinary-sunflower-b06c65.netlify.app/"
-                    target="_blank"
-                    rel="noopener"
-                    >Live Demo</a
-                  >
-                </div>
-                <div class="project-card">
-                  <h4>👩🏼‍🍳 Creative Kitchen 👩🏼‍🎨</h4>
-                  <p>
-                    A cheerful, responsive web page that captures the heart of
-                    my creative kitchen — where baking, crafting, and family fun
-                    come together in a delicious digital experience.
-                  </p>
-                  <a
-                    href="http://shecodes.io/cohorts/2782/projects/2695665"
-                    target="_blank"
-                    rel="noopener"
-                    >Live Demo</a
-                  >
-                </div>
-                <div class="project-card">
-                  <h4>🎸 Guitar Vibes 🎼</h4>
-                  <p>
-                    A dynamic landing page that celebrates my love for guitar —
-                    complete with riffs, rhythm, and a design that sings across
-                    every screen.
-                  </p>
-                  <a
-                    href="http://shecodes.io/cohorts/2742/projects/2690391"
-                    target="_blank"
-                    rel="noopener"
-                    >Live Demo</a
-                  >
-                </div>
-                <div class="project-card">
-                  <h4>🧮 Calculator for Kids</h4>
-                  <p>
-                    Keyboard-supported calculator with responsive layout and
-                    hover animations.
-                  </p>
-                  <a
-                    href="https://careym92.github.io/Calculator-for-kids/"
-                    target="_blank"
-                    rel="noopener"
-                    >Live Demo</a
-                  >
-                </div>
-                <div class="project-card">
-                  <h4>🍳 Leftover Remix Chef (PartyRock)</h4>
-                  <p>
-                    Beginner-friendly AI-powered recipe generator using prompt
-                    engineering concepts.
-                  </p>
-                  <a
-                    href="https://partyrock.aws/u/Carey-Ann/8nAvECgg3/Leftover-Chef"
-                    target="_blank"
-                    rel="noopener"
-                    >Live Demo</a
-                  >
-                </div>
-                <div class="project-card">
-                  <h4>🦓 PineCreek Zoo City</h4>
-                  <p>
-                    Zoo-themed web app with responsive layout, interactive
-                    animal cards, and hover animations.
-                  </p>
-                  <a
-                    href="https://careym92.github.io/Pine-City-Zoo/"
-                    target="_blank"
-                    rel="noopener"
-                    >Live Demo</a
-                  >
-                </div>
-                <div class="project-card">
-                  <h4>🦸 Superhero Showcase</h4>
-                  <p>
-                    Responsive layout featuring superhero profiles, grids, and
-                    sparkle effects.
-                  </p>
-                  <a
-                    href="https://careym92.github.io/Avengers_Superhero/"
-                    target="_blank"
-                    rel="noopener"
-                    >Live Demo</a
-                  >
-                </div>
-              </div>
+            <div class="cert-card web">
+              Python-Django Development – SimpliLearn
             </div>
           </div>
+
+          <!-- Data & AI -->
+          <div class="cert-category">
+            <h3>📊 Data & AI</h3>
+            <div class="cert-card data">
+              Introduction to Data Science – Cisco Networking Academy
+            </div>
+            <div class="cert-card data">Data Science & Analytics – HP LIFE</div>
+            <div class="cert-card data">
+              Business Analytics with Excel – SimpliLearn
+            </div>
+            <div class="cert-card data">AI Skills – DUT & Microsoft</div>
+            <div class="cert-card data">
+              Introducing Generative AI with AWS – Udacity
+            </div>
+            <div class="cert-card data">
+              Oracle Multicloud Architecture – Oracle University (In Progress)
+            </div>
+          </div>
+
+          <!-- Other / Professional Skills -->
+          <div class="cert-category">
+            <h3>🏆 Professional Skills</h3>
+            <div class="cert-card other">
+              Introduction to Critical Infrastructure Protection – OPSWAT
+              Academy
+            </div>
+            <div class="cert-card other">
+              Microsoft Excel Essentials – SimpliLearn
+            </div>
+            <div class="cert-card other">
+              Secretarial and Receptionist Course – Cursa
+            </div>
+            <div class="cert-card other">English C1 Advanced – EF SET</div>
+          </div>
         </div>
-      </section>
+      </div>
 
-      <section id="contact" class="contact">
-        <h2>📬 Let's Connect</h2>
-        <p>Reach out for collaborations, questions, or just to say hi!</p>
-        <a href="mailto:careyswartling@gmail.com">E-mail</a>
-        <br />
-        <a
-          href="https://www.linkedin.com/in/carey-ann-meinie-985ba9117/"
-          target="_blank"
-          rel="noopener"
-          >LinkedIn</a
-        >
-      </section>
-    </main>
+      <div class="cv-section" id="cvSection">
+        <div id="cvFrameContainer"></div>
+      </div>
+    </section>
 
+    <!-- ===== PROJECTS ===== -->
+    <section id="projectsSection">
+      <h2>✨ Featured Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>🧠💬🌱 Life Orientation: My Favourite Subject</h3>
+          <p>
+            A responsive web app celebrating Life Orientation as a favorite
+            subject, highlighting its importance in holistic education.
+          </p>
+          <a
+            href="https://carey-favourite-subject.netlify.app/"
+            target="_blank"
+            rel="noopener"
+            >Live Demo</a
+          >
+        </div>
+        <div class="project-card">
+          <h3>🌩️ Vanilla Weather App</h3>
+          <p>
+            A responsive web app delivering real-time weather updates worldwide.
+            Built without frameworks to show strong fundamentals in DOM
+            manipulation and API integration.
+          </p>
+          <a
+            href="https://extraordinary-sunflower-b06c65.netlify.app/"
+            target="_blank"
+            rel="noopener"
+            >Live Demo</a
+          >
+        </div>
+        <div class="project-card">
+          <h3>👩🏼‍🍳 Creative Kitchen</h3>
+          <p>
+            A cheerful, responsive page capturing baking, crafting, and family
+            fun in a digital experience.
+          </p>
+          <a
+            href="http://shecodes.io/cohorts/2782/projects/2695665"
+            target="_blank"
+            rel="noopener"
+            >Live Demo</a
+          >
+        </div>
+        <div class="project-card">
+          <h3>🎸 Guitar Vibes</h3>
+          <p>
+            A dynamic landing page celebrating guitar, with riffs, rhythm, and
+            responsive design.
+          </p>
+          <a
+            href="http://shecodes.io/cohorts/2742/projects/2690391"
+            target="_blank"
+            rel="noopener"
+            >Live Demo</a
+          >
+        </div>
+        <div class="project-card">
+          <h3>🧮 Calculator for Kids</h3>
+          <p>
+            Keyboard-supported calculator with responsive layout and hover
+            animations.
+          </p>
+          <a
+            href="https://careym92.github.io/Calculator-for-kids/"
+            target="_blank"
+            rel="noopener"
+            >Live Demo</a
+          >
+        </div>
+        <div class="project-card">
+          <h3>🍳 Leftover Remix Chef (PartyRock)</h3>
+          <p>
+            AI-powered recipe generator using prompt engineering concepts.
+            Beginner-friendly.
+          </p>
+          <a
+            href="https://partyrock.aws/u/Carey-Ann/8nAvECgg3/Leftover-Chef"
+            target="_blank"
+            rel="noopener"
+            >Live Demo</a
+          >
+        </div>
+        <div class="project-card">
+          <h3>🦓 PineCreek Zoo City</h3>
+          <p>
+            Zoo-themed web app with responsive layout, interactive animal cards,
+            and hover animations.
+          </p>
+          <a
+            href="https://careym92.github.io/Pine-City-Zoo/"
+            target="_blank"
+            rel="noopener"
+            >Live Demo</a
+          >
+        </div>
+        <div class="project-card">
+          <h3>🦸 Superhero Showcase</h3>
+          <p>
+            Responsive layout featuring superhero profiles, grids, and sparkle
+            effects.
+          </p>
+          <a
+            href="https://careym92.github.io/Avengers_Superhero/"
+            target="_blank"
+            rel="noopener"
+            >Live Demo</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact">
+      <h2>📬 Let's Connect</h2>
+      <p>Reach out for collaborations, questions, or just to say hi!</p>
+      <a href="mailto:careyswartling@gmail.com">E-mail</a>
+      <a
+        href="https://www.linkedin.com/in/carey-ann-meinie-985ba9117/"
+        target="_blank"
+        rel="noopener"
+        >LinkedIn</a
+      >
+    </section>
+
+    <!-- ===== FOOTER ===== -->
     <footer>
       <p>
         © 2025 | Built by
         <a href="https://github.com/CareyM92" target="_blank" rel="noopener"
-          >Carey-Ann Meinie</a
+          ><b>Carey-Ann Meinie</b></a
         >
-        and is
+        ·
         <a
           href="https://github.com/CareyM92/My-Portfolio"
           target="_blank"
           rel="noopener"
+          ><b>GitHub Repo</b></a
         >
-          open-sourced on GitHub</a
-        >
-        and
+        ·
         <a
           href="https://c-meinie-portfolio.netlify.app/"
           target="_blank"
           rel="noopener"
-          >hosted on Netlify</a
+          ><b>Live Site</b></a
         >
       </p>
     </footer>
 
+    <!-- JS -->
     <script src="index.js"></script>
   </body>
 </html>
