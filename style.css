@@ -1,6 +1,4 @@
-/* ===== COLOR VARIABLES ===== */
 :root {
-  /* Dark mode colors */
   --bg-main: #121212;
   --bg-surface: #1a1a1a;
   --bg-card: #242424;
@@ -9,15 +7,13 @@
   --accent1: #ff8c42;
   --accent2: #ff5e62;
 
-  /* Light mode colors – soft peach theme */
-  --light-bg-main: #fff4ee; /* soft peach base */
-  --light-bg-surface: #f9e7dcff; /* lighter peach for cards & header */
-  --light-bg-card: #ffffff; /* white card for contrast */
-  --light-text-primary: #2b2b2b; /* warm dark gray text */
-  --light-text-secondary: #555555; /* softer gray for subtext */
+  --light-bg-main: #fff4ee;
+  --light-bg-surface: #f9e7dcff;
+  --light-bg-card: #ffffff;
+  --light-text-primary: #2b2b2b;
+  --light-text-secondary: #555555;
 }
 
-/* ===== BASE ===== */
 * {
   margin: 0;
   padding: 0;
@@ -35,7 +31,6 @@ a {
   color: inherit;
 }
 
-/* ===== HEADER ===== */
 header {
   position: sticky;
   top: 0;
@@ -72,7 +67,6 @@ nav a:hover {
   color: #fff;
 }
 
-/* ===== HERO ===== */
 #hero {
   text-align: center;
   padding: 50px 20px 50px;
@@ -96,7 +90,6 @@ nav a:hover {
   margin: 0 auto;
 }
 
-/* ===== BUTTONS ===== */
 button,
 .button,
 .cert-btn {
@@ -119,7 +112,6 @@ button:hover,
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
 
-/* ===== ABOUT ===== */
 #about {
   padding: 60px 20px;
   max-width: 1000px;
@@ -173,7 +165,6 @@ button:hover,
   margin-top: 24px;
 }
 
-/* ===== CERTIFICATIONS ===== */
 .cert-list {
   display: none;
   margin-top: 24px;
@@ -212,7 +203,6 @@ button:hover,
   box-shadow: 0 6px 20px rgba(255, 140, 66, 0.3);
 }
 
-/* ===== PROJECTS ===== */
 #projectsSection {
   padding: 60px 20px;
   max-width: 1000px;
@@ -255,14 +245,23 @@ button:hover,
   margin-bottom: 12px;
 }
 .project-card a {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 8px 16px;
+  border: 2px solid var(--accent2);
+  border-radius: 8px;
   color: var(--accent2);
   font-weight: 600;
-}
-.project-card a:hover {
-  color: #fff;
+  transition: all 0.3s ease;
 }
 
-/* ===== CONTACT ===== */
+.project-card a:hover {
+  background: var(--accent2);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 94, 98, 0.4);
+}
+
 #contact {
   text-align: center;
   padding: 20px 20px;
@@ -288,7 +287,6 @@ button:hover,
   color: #fff;
 }
 
-/* ===== FOOTER ===== */
 footer {
   text-align: center;
   padding: 8px 16px;
@@ -305,7 +303,6 @@ footer a :hover {
   border-radius: 3px;
 }
 
-/* ===== LIGHT MODE ===== */
 body.light-mode {
   background: var(--light-bg-main);
   color: var(--light-text-primary);
@@ -380,11 +377,18 @@ body.light-mode nav a:hover {
   color: #fff;
 }
 
-.project-card.light-mode nav a:hover {
-  color: #e90404ff;
+body.light-mode .project-card a {
+  border: 2px solid var(--accent1);
+  color: var(--accent1);
 }
 
-/* ===== RESPONSIVE ===== */
+body.light-mode .project-card a:hover {
+  background: var(--accent1);
+  color: #fff; /* readable text */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 140, 66, 0.3);
+}
+
 @media (max-width: 1000px) {
   .cert-grid {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -420,5 +424,27 @@ body.light-mode nav a:hover {
   .cert-btn {
     padding: 8px 16px;
     font-size: 14px;
+  }
+}
+
+.typewriter {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 800;
+  text-align: center;
+  color: var(--text-color, #fff);
+  white-space: nowrap;
+  overflow: hidden;
+  width: fit-content;
+  margin: 0 auto;
+  font-size: clamp(1.5rem, 5vw, 4rem);
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: currentColor;
   }
 }
