@@ -1,3 +1,22 @@
+/* ===== COLOR VARIABLES ===== */
+:root {
+  /* Dark mode colors */
+  --bg-main: #121212;
+  --bg-surface: #1a1a1a;
+  --bg-card: #242424;
+  --text-primary: #eee;
+  --text-secondary: #bbb;
+  --accent1: #ff8c42;
+  --accent2: #ff5e62;
+
+  /* Light mode colors – soft peach theme */
+  --light-bg-main: #fff4ee; /* soft peach base */
+  --light-bg-surface: #f9e7dcff; /* lighter peach for cards & header */
+  --light-bg-card: #ffffff; /* white card for contrast */
+  --light-text-primary: #2b2b2b; /* warm dark gray text */
+  --light-text-secondary: #555555; /* softer gray for subtext */
+}
+
 /* ===== BASE ===== */
 * {
   margin: 0;
@@ -6,10 +25,10 @@
 }
 body {
   font-family: "Roboto", sans-serif;
-  background: #121212;
-  color: #eee;
+  background: var(--bg-main);
+  color: var(--text-primary);
   line-height: 1.6;
-  transition: all 0.3s;
+  transition: background 0.4s ease, color 0.4s ease;
 }
 a {
   text-decoration: none;
@@ -20,7 +39,7 @@ a {
 header {
   position: sticky;
   top: 0;
-  background: #1f1f1f;
+  background: var(--bg-surface);
   z-index: 100;
   display: flex;
   justify-content: space-between;
@@ -28,6 +47,7 @@ header {
   font-size: 18px;
   padding: 12px 30px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
 .theme-switch {
@@ -48,7 +68,7 @@ nav a {
   transition: 0.3s;
 }
 nav a:hover {
-  background: linear-gradient(90deg, #ff8c42, #ff5e62);
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
   color: #fff;
 }
 
@@ -56,17 +76,22 @@ nav a:hover {
 #hero {
   text-align: center;
   padding: 50px 20px 50px;
-  background: linear-gradient(135deg, #1f1f1f 0%, #2c2c2c 100%);
+  background: linear-gradient(
+    135deg,
+    var(--bg-surface) 0%,
+    var(--bg-card) 100%
+  );
+  transition: background 0.4s ease;
 }
 #hero h1 {
   font-size: 48px;
   font-weight: 900;
   margin-bottom: 16px;
-  color: #ff8c42;
+  color: var(--accent1);
 }
 #hero p {
   font-size: 20px;
-  color: #ccc;
+  color: var(--text-secondary);
   max-width: 700px;
   margin: 0 auto;
 }
@@ -82,7 +107,7 @@ button,
   font-weight: 600;
   transition: 0.3s;
   font-size: 16px;
-  background: linear-gradient(90deg, #ff8c42, #ff5e62);
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
   color: #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
@@ -92,18 +117,17 @@ button:hover,
 .cert-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-
-  /* === THEME TOGGLE BUTTON === */
 }
 
 /* ===== ABOUT ===== */
 #about {
   padding: 60px 20px;
   max-width: 1000px;
-  margin: 0 auto ;
-  background: #1e1e1e;
+  margin: 0 auto;
+  background: var(--bg-card);
   border-radius: 16px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transition: background 0.4s ease;
 }
 
 .about-container {
@@ -114,12 +138,17 @@ button:hover,
 }
 .about-img {
   flex: 1 1 300px;
-  max-width: 300px;
+  max-width: 30%;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   transform: translateY(-4px);
 }
-
+.about-img img {
+  width: 30%;
+  height: auto;
+  border-radius: inherit;
+  display: block;
+}
 .about-img:hover {
   transform: translateY(-8px);
   box-shadow: 0 6px 20px rgba(255, 140, 66, 0.3);
@@ -128,12 +157,12 @@ button:hover,
   flex: 2 1 500px;
 }
 .about-text h2 {
-  color: #ff8c42;
+  color: var(--accent1);
   font-size: 32px;
   margin-bottom: 16px;
 }
 .about-text p {
-  color: #ccc;
+  color: var(--text-secondary);
   margin-bottom: 12px;
 }
 .about-actions {
@@ -167,15 +196,15 @@ button:hover,
   min-height: 60px;
 }
 .cert-card.web {
-  background: linear-gradient(135deg, #2c2c2c, #ff8c42);
+  background: linear-gradient(135deg, var(--bg-card), var(--accent1));
   color: #fff;
 }
 .cert-card.data {
-  background: linear-gradient(135deg, #2c2c2c, #ff5e62);
+  background: linear-gradient(135deg, var(--bg-card), var(--accent2));
   color: #fff;
 }
 .cert-card.other {
-  background: linear-gradient(135deg, #2c2c2c, #999999);
+  background: linear-gradient(135deg, var(--bg-card), #999);
   color: #fff;
 }
 .cert-card:hover {
@@ -189,17 +218,17 @@ button:hover,
   max-width: 1000px;
   margin: 0 auto 40px;
   border-radius: 16px;
-  background: #1e1e1e;
+  background: var(--bg-card);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s, background 0.4s ease;
   display: none;
 }
 #projectsSection h2 {
   text-align: center;
   font-size: 32px;
   margin-bottom: 40px;
-  color: #ff8c42;
+  color: var(--accent1);
 }
 .projects-grid {
   display: grid;
@@ -207,7 +236,7 @@ button:hover,
   gap: 24px;
 }
 .project-card {
-  background: #2c2c2c;
+  background: var(--bg-surface);
   padding: 20px;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
@@ -218,15 +247,15 @@ button:hover,
   box-shadow: 0 6px 20px rgba(255, 140, 66, 0.3);
 }
 .project-card h3 {
-  color: #ff8c42;
+  color: var(--accent1);
   margin-bottom: 12px;
 }
 .project-card p {
-  color: #ccc;
+  color: var(--text-secondary);
   margin-bottom: 12px;
 }
 .project-card a {
-  color: #ff5e62;
+  color: var(--accent2);
   font-weight: 600;
 }
 .project-card a:hover {
@@ -236,15 +265,14 @@ button:hover,
 /* ===== CONTACT ===== */
 #contact {
   text-align: center;
-  padding: 30px 20px;
-  background: #1e1e1e;
-  border-radius: 16px;
+  padding: 20px 20px;
+  background: var(--bg-card);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 #contact h2 {
   font-size: 32px;
   margin-bottom: 16px;
-  color: #ff8c42;
+  color: var(--accent1);
 }
 #contact a {
   display: inline-block;
@@ -252,11 +280,11 @@ button:hover,
   padding: 8px 8px;
   border-radius: 16px;
   font-weight: 600;
-  color: #ff5e62;
+  color: var(--accent2);
   transition: 0.3s;
 }
 #contact a:hover {
-  background: #ff5e62;
+  background: var(--accent2);
   color: #fff;
 }
 
@@ -264,7 +292,7 @@ button:hover,
 footer {
   text-align: center;
   padding: 8px 16px;
-  background: #1f1f1f;
+  background: var(--bg-surface);
   color: #bbb;
   font-size: 14px;
 }
@@ -272,85 +300,90 @@ footer {
 footer a :hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 20px rgba(255, 140, 66, 0.3);
-  background: #ff5e62;
+  background: var(--accent2);
   color: #fff;
   border-radius: 3px;
 }
 
 /* ===== LIGHT MODE ===== */
 body.light-mode {
-  background: #fdfdfd;
-  color: #000;
+  background: var(--light-bg-main);
+  color: var(--light-text-primary);
 }
 body.light-mode #hero {
-  background: linear-gradient(135deg, #fefefe 0%, #eaeaea 100%);
+  background: linear-gradient(135deg, #fff8f4 0%, #ffe8dc 100%);
 }
 body.light-mode #hero h1 {
-  color: #ff8c42;
+  color: var(--accent1);
 }
 body.light-mode #hero p {
-  color: #222;
+  color: var(--light-text-secondary);
 }
 body.light-mode #about,
 body.light-mode #projectsSection,
 body.light-mode #contact {
-  background: #fff;
-  color: #000;
+  background: var(--light-bg-card);
+  color: var(--light-text-primary);
 }
 body.light-mode .about-text h2,
 body.light-mode #projectsSection h2,
 body.light-mode #contact h2 {
-  color: #ff8c42;
+  color: var(--accent1);
 }
 body.light-mode .about-text p,
 body.light-mode .project-card p,
 body.light-mode #contact p {
-  color: #222;
+  color: var(--light-text-secondary);
 }
 body.light-mode .project-card {
-  background: #f9f9f9;
-  color: #000;
+  background: var(--light-bg-card);
+  color: var(--light-text-primary);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 body.light-mode .project-card a {
-  color: #ff8c42;
+  color: var(--accent1);
 }
 body.light-mode .project-card a:hover {
   color: #fff;
 }
 body.light-mode .cert-card.web {
-  background: linear-gradient(135deg, #ffc4c4ff, #edd5c2ff);
-  color: #222;
+  background: linear-gradient(135deg, #ffe2c9, #fff0e0);
+  color: var(--light-text-primary);
 }
 body.light-mode .cert-card.data {
-  background: linear-gradient(135deg, #e8a3a3ff, #ffd2dfff);
-  color: #222;
+  background: linear-gradient(135deg, #ffd6d6, #ffe6e9);
+  color: var(--light-text-primary);
 }
 body.light-mode .cert-card.other {
-  background: linear-gradient(135deg, #c4c3c3ff, #eae8e8ff);
-  color: #222;
+  background: linear-gradient(135deg, #e8e8e8, #f7f7f7);
+  color: var(--light-text-primary);
 }
 body.light-mode a {
-  color: #ff5e62;
+  color: var(--accent2);
 }
 body.light-mode a:hover {
   color: #000;
 }
 
 body.light-mode footer {
-  background: #fff;
+  background: var(--light-bg-surface);
   color: #555;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 body.light-mode header {
-  background: #fff;
+  background: var(--light-bg-surface);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 body.light-mode nav a:hover {
-  background: linear-gradient(90deg, #ff8c42, #ff5e62);
+  background: linear-gradient(90deg, #ffa25a, #ff7a7a);
   color: #fff;
 }
+
+.project-card.light-mode nav a:hover {
+  color: #e90404ff;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1000px) {
   .cert-grid {
