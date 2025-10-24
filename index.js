@@ -98,3 +98,16 @@ themeToggle.addEventListener("click", () => {
 if (localStorage.getItem("theme") === "light") {
   document.body.classList.add("light-mode");
 }
+
+function displayName() {
+  const nameEl = document.querySelector("#name");
+
+  const typewriter = new Typewriter(nameEl, {
+    strings: "Hi, I'm Carey-Ann Meinie",
+    autoStart: true,
+    delay: 70,
+    cursor: "",
+  });
+}
+
+document.addEventListener("DOMContentLoaded", displayName);
